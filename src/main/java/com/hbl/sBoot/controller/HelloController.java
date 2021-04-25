@@ -1,5 +1,7 @@
 package com.hbl.sBoot.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,8 @@ public class HelloController {
     //@ResponseBody
     @RequestMapping("/hello")
     public String hello(){
+        Logger logger = LoggerFactory.getLogger(HelloController.class);
+        logger.info("this is slf4j");
         return "Hello World"+lastName;
     }
 }
