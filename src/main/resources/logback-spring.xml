@@ -11,9 +11,7 @@
         <!--展示格式 layout-->
         <layout class="ch.qos.logback.classic.PatternLayout">
             <springProfile name="dev">
-            <pattern>
                 <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
-            </pattern>
             </springProfile>
         </layout>
     </appender>

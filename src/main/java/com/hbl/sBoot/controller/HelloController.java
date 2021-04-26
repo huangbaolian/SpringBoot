@@ -7,18 +7,30 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-@RestController
-//@Controller
+import java.util.Arrays;
+import java.util.Map;
+
+@EnableWebMvc
+//@RestController
+@Controller
 public class HelloController {
 
-    @Value("${person.last-name}")
-    private String lastName;
-    //@ResponseBody
+    @ResponseBody
     @RequestMapping("/hello")
     public String hello(){
         Logger logger = LoggerFactory.getLogger(HelloController.class);
         logger.info("this is slf4j");
-        return "Hello World"+lastName;
+        return "Hello World";
     }
+    //查出一些数据在页面
+    @RequestMapping("/success")
+    public String success(Map<String,Object> maps){
+        maps.put("hello","<h1>你好</h1>");
+        maps.put("users", Arrays.asList("aaa","bbb","xccc"));
+        //classpath:/templates//success.html
+        return "success";
+    }
+
 }

@@ -54,7 +54,16 @@
             <artifactId>hibernate-validator</artifactId>
             <version>6.0.11.Final</version>
         </dependency>
-
+        <!--引入jquery-webjars-->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
 
     </dependencies>
     <!--这个插件，可以将应用打包成一个可执行的jar包-->
