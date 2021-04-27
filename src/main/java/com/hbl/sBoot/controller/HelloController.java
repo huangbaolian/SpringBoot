@@ -12,10 +12,16 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import java.util.Arrays;
 import java.util.Map;
 
-@EnableWebMvc
+
 //@RestController
 @Controller
 public class HelloController {
+
+    /*@RequestMapping({"/","/index.html"})
+    public String index(){
+        return "login";
+    }
+*/
 
     @ResponseBody
     @RequestMapping("/hello")

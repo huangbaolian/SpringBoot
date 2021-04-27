@@ -10,9 +10,9 @@
     <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
         <!--展示格式 layout-->
         <layout class="ch.qos.logback.classic.PatternLayout">
-            <springProfile name="dev">
+            <!--<springProfile name="dev">-->
                 <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
-            </springProfile>
+            <!--</springProfile>-->
         </layout>
     </appender>
 
