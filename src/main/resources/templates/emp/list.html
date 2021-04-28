@@ -62,7 +62,7 @@
                         <td th:text="${emp.id}"></td>
                         <td>[[emp.lastname]]</td>
                         <td th:text="${emp.email}"></td>
-                        <td th:text="${emp.gender}"></td>
+                        <td th:text="${emp.gender}==0?'女':'男'"></td>
                         <td th:text="${emp.department.departmentName}"></td>
                         <td th:text="${emp.birth}"></td>
                     </tr>
