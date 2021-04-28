@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.util.pattern.PathPattern;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,5 +32,15 @@ public class EmployeeDao {
         }
         employee.setDepartment(departmentDao.getDepartment(employee.getDepartment().getId()));
         employees.put(employee.getId(),employee);
+    }
+
+    public Collection<Employee> getAll(){
+        return employees.values();
+    }
+    public Employee get(Integer id){
+        return employees.get(id);
+    }
+    public void delete(Integer id){
+        employees.remove(id);
     }
 }

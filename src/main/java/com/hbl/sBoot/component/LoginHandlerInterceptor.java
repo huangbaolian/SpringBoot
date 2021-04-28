@@ -11,6 +11,10 @@ import javax.xml.ws.handler.Handler;
 public class LoginHandlerInterceptor implements HandlerInterceptor {
     //目标方法执行之前
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        String uri = request.getRequestURI();
+        if (uri.endsWith("js")||uri.endsWith("css")||uri.endsWith("jpg")||uri.endsWith("svg")){
+            return true;
+        }
         Object user = request.getSession().getAttribute("loginUser");
         if (user==null){
             //未登录,返回登录页面
