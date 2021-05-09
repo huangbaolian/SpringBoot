@@ -1,30 +1,33 @@
 package com.hbl.sBoot.controller;
 
 import com.hbl.sBoot.exception.UserNotExistException;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
-
-//@RestController
-@Controller
+@Api(tags={"Hello测试接口"})
+@RestController
+//@Controller
 public class HelloController {
 
-    /*@RequestMapping({"/","/index.html"})
-    public String index(){
-        return "login";
-    }
-*/
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
+    @ApiOperation(value = "查询一个student")
+    @ResponseBody
+    @GetMapping("/query")
+    public Map<String,Object> map(){
+        List<Map<String, Object>> maps = jdbcTemplate.queryForList("select * from student");
+        return maps.get(0);
+    }
     @ResponseBody
     @RequestMapping("/hello")
     public String hello(@RequestParam("user") String user){

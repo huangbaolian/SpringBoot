@@ -7,16 +7,24 @@ public class Employee {
     private String lastName;
     private String email;
     private Integer gender;
-    private Department department;
+    private Integer dId;
     private Date birth;
 
-    public Employee(Integer id, String lastName, String email, Integer gender, Department department,Date birth) {
+    public Employee(Integer id, String lastName, String email, Integer gender, Integer dId, Date birth) {
         this.id = id;
         this.lastName = lastName;
         this.email = email;
         this.gender = gender;
-        this.department = department;
+        this.dId = dId;
         this.birth = birth;
+    }
+
+    public Integer getdId() {
+        return dId;
+    }
+
+    public void setdId(Integer dId) {
+        this.dId = dId;
     }
 
     @Override
@@ -26,7 +34,6 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", gender=" + gender +
-                ", department=" + department +
                 ", birth=" + birth +
                 '}';
     }
@@ -61,14 +68,6 @@ public class Employee {
 
     public void setGender(Integer gender) {
         this.gender = gender;
-    }
-
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
     }
 
     public Date getBirth() {
