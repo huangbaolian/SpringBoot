@@ -1,6 +1,9 @@
 package com.hbl.sBoot.entities;
 
-import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.sql.Date;
 
 public class Employee {
     private Integer id;
@@ -8,7 +11,11 @@ public class Employee {
     private String email;
     private Integer gender;
     private Integer dId;
+    @DateTimeFormat
     private Date birth;
+
+    public Employee() {
+    }
 
     public Employee(Integer id, String lastName, String email, Integer gender, Integer dId, Date birth) {
         this.id = id;
@@ -34,6 +41,7 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", gender=" + gender +
+                ", dId=" + dId +
                 ", birth=" + birth +
                 '}';
     }
