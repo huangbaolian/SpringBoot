@@ -1,16 +1,9 @@
 package com.hbl.sBoot.config;
 
-import com.hbl.sBoot.component.LoginHandlerInterceptor;
-import org.springframework.boot.web.server.WebServerFactory;
-import org.springframework.boot.web.server.WebServerFactoryCustomizer;
-import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import sun.rmi.runtime.Log;
 
 //使用WebMvcConfigurerAdapter可以扩展SpringMVC功能
 //@EnableWebMvc

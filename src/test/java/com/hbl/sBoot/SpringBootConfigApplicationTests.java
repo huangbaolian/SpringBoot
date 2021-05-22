@@ -1,8 +1,6 @@
 package com.hbl.sBoot;
 
 import com.hbl.sBoot.bean.Person;
-import com.hbl.sBoot.controller.HelloController;
-import com.hbl.sBoot.service.HelloService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

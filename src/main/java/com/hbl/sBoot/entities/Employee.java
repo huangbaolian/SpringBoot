@@ -1,37 +1,35 @@
 package com.hbl.sBoot.entities;
 
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.sql.Date;
+import java.util.Date;
 
 public class Employee {
     private Integer id;
     private String lastName;
     private String email;
     private Integer gender;
-    private Integer dId;
-    @DateTimeFormat
+    private Department department;
     private Date birth;
 
     public Employee() {
     }
 
-    public Employee(Integer id, String lastName, String email, Integer gender, Integer dId, Date birth) {
+    public Employee(Integer id, String lastName, String email, Integer gender,Department department, Date birth) {
         this.id = id;
         this.lastName = lastName;
         this.email = email;
         this.gender = gender;
-        this.dId = dId;
+        this.department = department;
         this.birth = birth;
     }
 
-    public Integer getdId() {
-        return dId;
+
+    public Department getDepartment() {
+        return department;
     }
 
-    public void setdId(Integer dId) {
-        this.dId = dId;
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     @Override
@@ -41,7 +39,6 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", gender=" + gender +
-                ", dId=" + dId +
                 ", birth=" + birth +
                 '}';
     }
